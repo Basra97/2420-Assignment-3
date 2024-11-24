@@ -16,11 +16,11 @@ Copy the following command to create a system user
 sudo useradd -r -d /var/lib/webgen -s /usr/sbin/nologin webgen
 ```
 
--r creates a system account 
+-*r*: creates a system account 
 
--d specifies the home directory
+-*d*: specifies the home directory
 
--s specifes a non login shell 
+-*s*: specifes a non login shell 
 
 2. Copy and paste the following command to create a home directory. 
 
@@ -43,7 +43,7 @@ git clone https://git.sr.ht/~nathan_climbs/2420-as2-start
 
 ```
 >[!NOTE]
-Make sure to use `ls` command to verify if the repository is cloned.
+Make sure to use `ls` command to verify if the repository is cloned. Look for `2420-as2-start/`. 
 
 4. Moving generate_index file to `/var/lib/webgen/bin` directory. 
 
@@ -92,6 +92,94 @@ sudo chown -R webgen:webgen /var/lib/webgen
 ```
 
 ## Task 2: Creation of service and timer scripts
+
+1. Creation of `generate-index.service` file.
+
+Type the following command to create the service file
+
+```
+sudo nvim /etc/systemd/system/generate-index.service
+```
+
+Copy the following into `generate-index.service` 
+
+```
+[Unit]
+Description=Generate Index HTML
+
+[Service]
+User=webgen
+Group=webgen
+ExecStart=/var/lib/webgen/bin/generate_index
+```
+
+2. Creating the `generate-index.timer` file
+
+Type the command 
+
+```
+sudo nvim /etc/systemd/system/generate-index.timer
+```
+Copy the following into `generate-index.service`
+
+```
+[Unit]
+Description=Runs generate-index.service everyday at 05:00
+
+[Timer]
+OnCalendar=*-*-* 05:00:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+```
+
+3. Starting the service 
+
+To start the service, type the following command 
+
+```
+sudo systemctl start generate-index.service 
+```
+To see the status of the service, type the command below
+
+```
+sudo systemctl status generate-index.service 
+```
+>[!NOTE]
+The service status will say inactive but enabled. 
+
+Type the following command below to view the logs of the service
+
+```
+sudo journalctl -u generate-index.service
+```
+
+4. Enabling and Starting the timer
+
+Type the following command to enable the timer
+
+```
+sudo systemctl enable generate-index.timer
+```
+
+Then, type the command below to start the timer 
+
+```
+sudo systemctl start generate-index.timer
+```
+
+Check the status of the timer by typing the command
+
+```
+sudo systemctl status generate-index.timer 
+```
+
+## Task 3: Configuration of nginx and creation of Server Blocks
+
+
+
+
 
 
 
