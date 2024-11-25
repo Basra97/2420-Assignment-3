@@ -235,7 +235,7 @@ sudo nvim /etc/nginx/sites-available/webgen
 
 Copy and Paste the following in the server block 
 
->{!NOTE}
+>[!NOTE]
 server_name can be changed to your IP address once attained task 5. 
 
 ```
