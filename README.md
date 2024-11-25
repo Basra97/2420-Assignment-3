@@ -116,7 +116,9 @@ Copy the following into `generate-index.service`
 
 ``` ini
 [Unit]
-Description=Generate Index HTML
+Description=Generate Index Service
+Wants=network-online.target
+After=network-online.target
 
 [Service]
 User=webgen
@@ -243,7 +245,6 @@ server_name can be changed to your IP address once attained task 5.
 ```
 server {
     listen 80;
-    listen [::]:80;
     server_name localhost.webgen;
     
 
