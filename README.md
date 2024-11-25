@@ -3,9 +3,6 @@
 
 The goal of this assignment is to create a Bash script that generates a static `index.html` file that contains system information, the file runs daily at 05:00 using a `systemd` service and timer. The script that creates the HTML document will be ran on your Arch Linux and hosted from a `nginx` web server which has a `ufw` (uncomplicated firewall) to secure your server. 
 
-note to self:
-make sure the questions are answered
-
 ## Table of Contents
 
 1. [Task 1: Creation of System User](#task-1-creation-of-system-user)
@@ -25,11 +22,14 @@ Copy the following command to create a system user
 sudo useradd -r -d /var/lib/webgen -s /usr/sbin/nologin webgen
 ```
 
--*r*: creates a system account 
+-*r*: creates a system user account 
 
 -*d*: specifies the home directory
 
 -*s*: specifies a non login shell 
+
+>[!NOTE]
+We want to create a system user because of the improved security.
 
 2. Copy and paste the following command to create a home directory. 
 
@@ -302,7 +302,7 @@ Run the following command to install UFW
 ```
 sudo pacman -S ufw
 ```
->[!CAUTION]
+>[!Warning]
 Do NOT enable UFW after installing, if done, you will be locked out of your droplet. 
 
 2. Allowing SSH and HTTP
