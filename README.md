@@ -252,9 +252,7 @@ server {
 ```
 
 >[!NOTE]
-The reason we created a seperate server block is it helps keep your file organized and easier to manage and this makes configuration easier. It also helps
-
-
+The reason we created a seperate server block is it helps keep your file organized and easier to manage and this makes configuration easier. 
 
 6. Enabling the server block using a symlink
 
@@ -372,12 +370,15 @@ You should see results like below
 ```
 Status: active
 
+Status: active
+
 To                         Action      From
 --                         ------      ----
-22                         ALLOW       Anywhere                  
+22                         LIMIT       Anywhere                  
 80                         ALLOW       Anywhere                  
-22 (v6)                    ALLOW       Anywhere (v6)             
+22 (v6)                    LIMIT       Anywhere (v6)             
 80 (v6)                    ALLOW       Anywhere (v6)  
+
 ```
 
 ## Task 5: System Information Page 
@@ -401,6 +402,8 @@ You have successfully completed the tasks!
 
 ## References
 
+man useradd -r options for creating a system account user
+
 Nginx. nginx - ArchWiki. (n.d.). https://wiki.archlinux.org/title/Nginx 
 
 Systemd/Timers. systemd/Timers - ArchWiki. (n.d.). https://wiki.archlinux.org/title/Systemd/Timers 
@@ -413,13 +416,9 @@ Uncomplicated firewall. Uncomplicated Firewall - ArchWiki. (n.d.). https://wiki.
 
 2420-notes/week-eleven.md · main · cit_2420 / 2420-notes-F24 · GITLAB. GitLab. (n.d.-a). https://gitlab.com/cit2420/2420-notes-f24/-/blob/main/2420-notes/week-eleven.md 
 
-GeeksforGeeks. (2024, February 13). How to create directory in linux: Mkdir command. https://www.geeksforgeeks.org/mkdir-command-in-linux-with-examples/ 
-
-man useradd -r options for creating a system account user
-
 Understanding the nginx configuration file structure and configuration contexts. DigitalOcean. (n.d.). https://www.digitalocean.com/community/tutorials/understanding-the-nginx-configuration-file-structure-and-configuration-contexts 
 
-
+GeeksforGeeks. (2024, February 13). How to create directory in linux: Mkdir command. https://www.geeksforgeeks.org/mkdir-command-in-linux-with-examples/ 
 
 
 
