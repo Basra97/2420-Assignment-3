@@ -81,6 +81,27 @@ Then run
 ```
 sudo nvim index.html
 ```
+Make sure the content within `index.html` is.
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Information</title>
+</head>
+<body>
+    <h1>System Information</h1>
+    <p><strong>Kernel Release:</strong> 6.11.9-arch1-1</p>
+    <p><strong>Operating System:</strong> Arch Linux</p>
+    <p><strong>Date:</strong> 25/11/2024</p>
+    <p><strong>Number of Installed Packages:</strong> 205</p>
+</body>
+</html>
+```
+
+
 >[!NOTE]
 To see the directory structure, install tree by copying the following command
 
