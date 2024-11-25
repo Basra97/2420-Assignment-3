@@ -225,7 +225,7 @@ mkdir /etc/nginx/sites-available
 mkdir /etc/nginx/sites-enabled
 ```
 
-5. Creation of server block in `sites-available`
+5. Creating server block in `sites-available`
 
 Type the following command to create a new server block file
 
@@ -308,7 +308,7 @@ Run the following command to install UFW
 sudo pacman -S ufw
 ```
 >[!Warning]
-Do NOT enable UFW after installing, if done, you will be locked out of your droplet. 
+Do NOT enable UFW after installing, if done, you will be locked out of your droplet. Once the steps below have been done, you can safely enable UFW
 
 2. Allowing SSH and HTTP
 
@@ -335,7 +335,7 @@ or
 2. Then, `sudo systemctl restart iptables` to restart `iptables`
 
 >[!Important]
-Make sure after running step 2 commands it says.
+Make sure after running step 2 commands it says,
 Rule updated
 Rule updated (v6)
 
@@ -387,14 +387,14 @@ To                         Action      From
 
 To find your droplet's IP address, log into DigitalOcean and click the droplet section, then find your droplet and you will see your ip address. 
 
-2. Visiting the system information web server page.
+Then
 
 Go to your preferred browser and type.
 
 ```
 http://droplet-ip
 ```
-Your page should be like this
+Your page should be like this.
 
 ![Screenshot of the system information page](SystemInformation.png)
 
