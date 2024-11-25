@@ -3,6 +3,9 @@
 
 The goal of this assignment is to create a Bash script that generates a static `index.html` file that contains system information, the file runs daily at 05:00 using a `systemd` service and timer. The script that creates the HTML document will be ran on your Arch Linux and hosted from a `nginx` web server which has a `ufw` (uncomplicated firewall) to secure your server. 
 
+note to self:
+make sure the questions are answered
+
 ## Table of Contents
 
 
@@ -103,7 +106,7 @@ sudo nvim /etc/systemd/system/generate-index.service
 
 Copy the following into `generate-index.service` 
 
-```
+``` ini
 [Unit]
 Description=Generate Index HTML
 
@@ -122,7 +125,7 @@ sudo nvim /etc/systemd/system/generate-index.timer
 ```
 Copy the following into `generate-index.service`
 
-```
+``` ini
 [Unit]
 Description=Runs generate-index.service everyday at 05:00
 
@@ -175,7 +178,137 @@ Check the status of the timer by typing the command
 sudo systemctl status generate-index.timer 
 ```
 
-## Task 3: Configuration of nginx and creation of Server Blocks
+## Task 3: Configuration of nginx and creation of Server Blocks 
+
+1. Install nginx by copying and pasting the command below
+
+```
+sudo pacman -S nginx
+```
+
+2. Editing the `nginx.conf` file
+
+Type the following command to edit the `nginx.conf` file
+
+```
+sudo nvim /etc/nginx/nginx.conf
+```
+
+3. Editing user in nginx and http
+
+Change `#user http;` to `webgen` `webgen` 
+
+```
+user webgen webgen;
+```
+Add sites-enabled into your `http` block above `server`
+
+```
+include /etc/nginx/sites-enabled/*;
+```
+
+4. Create `sites-available` and `sites-enabled` directory
+
+Run the following command to create the directories
+
+```
+mkdir /etc/nginx/sites-available
+```
+and 
+
+```
+mkdir /etc/nginx/sites-enabled
+```
+
+5. Creation of server block in `sites-available`
+
+Type the following command to create a new server block file
+
+```
+sudo nvim /etc/nginx/sites-available/webgen
+```
+
+Copy and Paste the following in the server block
+
+```
+server {
+    listen 80;
+    server_name localhost.webgen;
+
+    root /var/lib/webgen/HTML;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}
+```
+
+6. Enabling the server block using a symlink
+
+Type the following command to symlink the server block
+
+```
+sudo ln -s /etc/nginx/sites-available/webgen /etc/nginx/sites-enabled/ 
+```
+7. Testing Nginx
+
+Type the command below to test nginx 
+
+```
+sudo nginx -t
+```
+
+>[!NOTE]
+You should see a text output like
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+
+8. Restarting Nginx
+
+To restart nginx, run the following command
+
+```
+sudo systemctl restart nginx
+```
+
+9. Starting Nginx
+
+Copy and Paste the command to start nginx
+
+```
+sudo systemctl start nginx
+```
+
+>[!IMPORTANT]
+To see if nginx is active and running, run the following command 
+
+```
+sudo systemctl status nginx
+``` 
+
+Task 4: Configuration of UFW (SSH and UFW)
+
+1. Install UFW
+
+Run the following command to insall UFW
+
+```
+sudo pacman -S ufw
+```
+>[!CAUTION]
+Do NOT enable UFW after installing, if done, you will be locked out of your droplet. 
+
+2. 
+
+
+
+
+
+
+
+
+
 
 
 
