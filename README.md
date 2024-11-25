@@ -261,7 +261,8 @@ sudo nginx -t
 
 >[!NOTE]
 You should see a text output like
-nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: 
+the configuration file /etc/nginx/nginx.conf syntax is ok
 nginx: configuration file /etc/nginx/nginx.conf test is successful
 
 8. Restarting Nginx
@@ -281,13 +282,13 @@ sudo systemctl start nginx
 ```
 
 >[!IMPORTANT]
-To see if nginx is active and running, run the following command 
+To see if nginx is active and running, run the following command. 
 
 ```
 sudo systemctl status nginx
 ``` 
 
-Task 4: Configuration of UFW (SSH and UFW)
+## Task 4: Configuration of UFW (SSH and UFW)
 
 1. Install UFW
 
@@ -299,7 +300,100 @@ sudo pacman -S ufw
 >[!CAUTION]
 Do NOT enable UFW after installing, if done, you will be locked out of your droplet. 
 
-2. 
+2. Allowing SSH and HTTP
+
+To allow SSH and HTTP, run the following command
+
+```
+sudo ufw allow ssh
+```
+and
+
+```
+sudo ufw allow http
+```
+>[!Note]
+You may run into a error due to `iptables` 
+
+To fix this issue
+
+1. Run `sudo pacman -Syu`
+2. Turn off droplet using the digital ocean
+
+or
+
+1. Run `sudo pacman -S iptables` to update the `iptables` version
+2. Then, `sudo systemctl restart iptables` to restart `iptables`
+
+>[!Important]
+Make sure after running step 2 commands it says.
+Rule updated
+Rule updated (v6)
+
+3. SSH rate limiting 
+
+To limit the SSH rate, type the following command 
+
+```
+sudo ufw limit ssh
+```
+
+4. Enabling UFW
+
+Type the following command to enable UFW.
+
+```
+sudo ufw enable
+```
+
+>[!Important]
+Make sure to check the status of your firewall.
+
+5. Status of UFW
+
+To see the status of UFW, run the command below.
+
+```
+sudo ufw status
+```
+You shold see results like below
+
+```
+Status: active
+
+To                         Action      From
+--                         ------      ----
+22                         ALLOW       Anywhere                  
+80                         ALLOW       Anywhere                  
+22 (v6)                    ALLOW       Anywhere (v6)             
+80 (v6)                    ALLOW       Anywhere (v6)  
+```
+
+## Task 5: System Information Page 
+
+1. Droplet IP Adress
+
+To find your droplet's IP adress, log into DigitalOcean and click the droplet section, then find your droplet and you will see your ip address. 
+![Screenshot of my system information page](/2420-Assignment-3/Images/Untitled%20document%20(9).png)
+
+2. Visiting the system information web server page.
+
+Go to your perferred browser and type.
+
+```
+http://droplet-ip
+```
+Your page should be like this
+
+![Screenshot of the system information page](/2420-Assignment-3/Images/SystemInformation.png)
+
+You have successfully completed the tasks!
+
+## References
+
+
+
+
 
 
 
