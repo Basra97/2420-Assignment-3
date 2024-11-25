@@ -391,6 +391,9 @@ You have successfully completed the tasks!
 
 ## References
 
+![Screenshot of my system information page](digitaloceanip.png)
+![Screenshot of the system information page](SystemInformation.png)
+
 
 
 
