@@ -233,7 +233,10 @@ Type the following command to create a new server block file
 sudo nvim /etc/nginx/sites-available/webgen
 ```
 
-Copy and Paste the following in the server block
+Copy and Paste the following in the server block 
+
+>{!NOTE}
+server_name can be changed to your IP address once attained task 5. 
 
 ```
 server {
