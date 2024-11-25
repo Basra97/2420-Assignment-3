@@ -374,7 +374,6 @@ To                         Action      From
 1. Droplet IP Adress
 
 To find your droplet's IP adress, log into DigitalOcean and click the droplet section, then find your droplet and you will see your ip address. 
-![Screenshot of my system information page](digitaloceanip.png)
 
 2. Visiting the system information web server page.
 
@@ -391,6 +390,21 @@ You have successfully completed the tasks!
 
 ## References
 
+Nginx. nginx - ArchWiki. (n.d.). https://wiki.archlinux.org/title/Nginx 
+
+Systemd/Timers. systemd/Timers - ArchWiki. (n.d.). https://wiki.archlinux.org/title/Systemd/Timers 
+
+Uncomplicated firewall. Uncomplicated Firewall - ArchWiki. (n.d.). https://wiki.archlinux.org/title/Uncomplicated_Firewall 
+
+2420-notes/week-TWELVE.MD · main · cit_2420 / 2420-notes-F24 · GITLAB. GitLab. (n.d.). https://gitlab.com/cit2420/2420-notes-f24/-/blob/main/2420-notes/week-twelve.md 
+
+2420-notes/week-TEN.MD · main · cit_2420 / 2420-notes-F24 · GITLAB. GitLab. (n.d.-a). https://gitlab.com/cit2420/2420-notes-f24/-/blob/main/2420-notes/week-ten.md 
+
+2420-notes/week-eleven.md · main · cit_2420 / 2420-notes-F24 · GITLAB. GitLab. (n.d.-a). https://gitlab.com/cit2420/2420-notes-f24/-/blob/main/2420-notes/week-eleven.md 
+
+GeeksforGeeks. (2024, February 13). How to create directory in linux: Mkdir command. https://www.geeksforgeeks.org/mkdir-command-in-linux-with-examples/ 
+
+man useradd -r options for creating a system account user
 
 
 
