@@ -374,7 +374,7 @@ To                         Action      From
 1. Droplet IP Adress
 
 To find your droplet's IP adress, log into DigitalOcean and click the droplet section, then find your droplet and you will see your ip address. 
-![Screenshot of my system information page](/2420-Assignment-3/digitaloceanip.png)
+![Screenshot of my system information page](digitaloceanip.png)
 
 2. Visiting the system information web server page.
 
@@ -385,14 +385,12 @@ http://droplet-ip
 ```
 Your page should be like this
 
-![Screenshot of the system information page](/2420-Assignment-3/SystemInformation.png)
+![Screenshot of the system information page](SystemInformation.png)
 
 You have successfully completed the tasks!
 
 ## References
 
-![Screenshot of my system information page](digitaloceanip.png)
-![Screenshot of the system information page](SystemInformation.png)
 
 
 
