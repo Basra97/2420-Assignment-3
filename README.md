@@ -238,7 +238,9 @@ Copy and Paste the following in the server block
 ```
 server {
     listen 80;
+    listen [::]:80;
     server_name localhost.webgen;
+    
 
     root /var/lib/webgen/HTML;
     index index.html;
@@ -248,6 +250,11 @@ server {
     }
 }
 ```
+
+>[!NOTE]
+The reason we created a seperate server block is it helps keep your file organized and easier to manage and this makes configuration easier. It also helps
+
+
 
 6. Enabling the server block using a symlink
 
@@ -409,6 +416,10 @@ Uncomplicated firewall. Uncomplicated Firewall - ArchWiki. (n.d.). https://wiki.
 GeeksforGeeks. (2024, February 13). How to create directory in linux: Mkdir command. https://www.geeksforgeeks.org/mkdir-command-in-linux-with-examples/ 
 
 man useradd -r options for creating a system account user
+
+Understanding the nginx configuration file structure and configuration contexts. DigitalOcean. (n.d.). https://www.digitalocean.com/community/tutorials/understanding-the-nginx-configuration-file-structure-and-configuration-contexts 
+
+
 
 
 
