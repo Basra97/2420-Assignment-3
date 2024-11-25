@@ -8,6 +8,12 @@ make sure the questions are answered
 
 ## Table of Contents
 
+1. [Task 1: Creation of System User](#task-1-creation-of-system-user)
+2. [Task 2: Creation of service and timer scripts](#task-2-creation-of-service-and-timer-scripts)
+3. [Task 3: Configuration of nginx and creation of Server Blocks ](#task-3-configuration-of-nginx-and-creation-of-server-blocks)
+4. [Task 4: Configuration of UFW (SSH and UFW)](#task-4-configuration-of-ufw-ssh-and-ufw)
+5. [Task 5: System Information Page](#task-5-system-information-page)
+6. [References](#references)
 
 ## Task 1: Creation of System User 
 
@@ -214,7 +220,6 @@ Run the following command to create the directories
 ```
 mkdir /etc/nginx/sites-available
 ```
-and 
 
 ```
 mkdir /etc/nginx/sites-enabled
@@ -307,7 +312,6 @@ To allow SSH and HTTP, run the following command
 ```
 sudo ufw allow ssh
 ```
-and
 
 ```
 sudo ufw allow http
