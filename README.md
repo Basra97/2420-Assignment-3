@@ -29,7 +29,7 @@ sudo useradd -r -d /var/lib/webgen -s /usr/sbin/nologin webgen
 
 -*d*: specifies the home directory
 
--*s*: specifes a non login shell 
+-*s*: specifies a non login shell 
 
 2. Copy and paste the following command to create a home directory. 
 
@@ -297,7 +297,7 @@ sudo systemctl status nginx
 
 1. Install UFW
 
-Run the following command to insall UFW
+Run the following command to install UFW
 
 ```
 sudo pacman -S ufw
@@ -360,7 +360,7 @@ To see the status of UFW, run the command below.
 ```
 sudo ufw status
 ```
-You shold see results like below
+You should see results like below
 
 ```
 Status: active
@@ -375,13 +375,13 @@ To                         Action      From
 
 ## Task 5: System Information Page 
 
-1. Droplet IP Adress
+1. Droplet IP Address
 
-To find your droplet's IP adress, log into DigitalOcean and click the droplet section, then find your droplet and you will see your ip address. 
+To find your droplet's IP address, log into DigitalOcean and click the droplet section, then find your droplet and you will see your ip address. 
 
 2. Visiting the system information web server page.
 
-Go to your perferred browser and type.
+Go to your preferred browser and type.
 
 ```
 http://droplet-ip
